@@ -1,5 +1,2 @@
-module Util
-( getInputForDay ) where
+module Util where
 
-getInputForDay :: Int -> IO String
-getInputForDay = undefined
