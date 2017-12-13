@@ -2,15 +2,13 @@ module Day9 where
 
 import           Control.Arrow
 import           Control.Monad.State
+import           Util
 
 type Score = Int
 type GarbageCount = Int
 type NestLevel = Int
 type Result = (Score, GarbageCount)
 type StreamState = (NestLevel, GarbageCount)
-
-input :: IO String
-input = readFile "D:\\documents\\programming\\haskell\\AoC\\day9\\input.txt"
 
 score :: String -> Result
 score s = evalState (score' s) (0, 0)
@@ -53,4 +51,6 @@ score' ('}':s) = do
 score' (c:_)   = error $ "unexpected character in input: " ++ [c]
 
 day9 :: IO ()
-day9 = fmap score input >>= print
+day9 = do
+  input <- getInputForDay 9
+  print $ score input
