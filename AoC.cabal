@@ -20,4 +20,5 @@ library
   build-depends:       base >= 4.7 && < 5
                      , mtl
                      , split
+                     , parsec
   other-modules:       Paths_AoC
